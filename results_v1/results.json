@@ -1,0 +1,482 @@
+{
+  "scenarios": [
+    "wilson",
+    "shaw"
+  ],
+  "config": {
+    "routing": {
+      "auto_close_max": 0.5,
+      "analyst_min": 0.7,
+      "fallback_suspicion": 0.5
+    },
+    "risk": {
+      "half_life_hours": 12.0,
+      "window_hours": 48.0,
+      "cooldown_hours": 6.0,
+      "risk_threshold": 2.0,
+      "suspicion_floor": 0.3,
+      "min_tactics_for_incident": 2,
+      "high_priority_tactics": 3,
+      "high_priority_tactic_names": [
+        "exfiltration",
+        "impact"
+      ]
+    },
+    "grouping": {
+      "window_seconds": 3600.0
+    },
+    "llm": {
+      "base_url": "http://localhost:11434",
+      "model": "qwen3:8b",
+      "timeout_seconds": 30.0,
+      "temperature": 0.0,
+      "max_history_alerts": 10,
+      "prompt": "v1",
+      "examples_path": null
+    },
+    "jev": {
+      "model": "jev-latest",
+      "timeout_seconds": 5.0,
+      "max_retries": 1,
+      "concurrency": 16
+    }
+  },
+  "aggregator_weights": {
+    "off_hours": 0.09,
+    "unusual_activity": 13.759,
+    "account_mismatch": 2.828,
+    "malicious_automation": 1.42,
+    "severity": 15.46,
+    "severity_missing": 2.471,
+    "n_tactics": 1.344,
+    "tactic:reconnaissance": -0.587,
+    "tactic:resource_development": 0.0,
+    "tactic:initial_access": -4.561,
+    "tactic:execution": 0.0,
+    "tactic:persistence": -1.625,
+    "tactic:privilege_escalation": 3.302,
+    "tactic:defense_evasion": 3.336,
+    "tactic:credential_access": 3.371,
+    "tactic:discovery": -0.015,
+    "tactic:lateral_movement": -1.877,
+    "tactic:collection": 0.0,
+    "tactic:command_and_control": 0.0,
+    "tactic:exfiltration": 0.0,
+    "tactic:impact": 0.0
+  },
+  "reflex": {
+    "metrics": {
+      "alerts": 705028,
+      "groups": 41816,
+      "grouping_reduction": 0.9407,
+      "attack_alerts": 440782,
+      "benign_alerts": 264246,
+      "benign_auto_resolve_jev": 0.6068,
+      "benign_closed_total": 0.6068,
+      "per_step_recall": 1.0,
+      "per_alert_recall": 1.0,
+      "per_chain_recall": 1.0,
+      "attack_steps": 15,
+      "attack_chains": 4,
+      "route_share": {
+        "auto_close": 0.9298,
+        "sent_to_llm": 0.0138,
+        "llm_benign": 0.0,
+        "analyst": 0.0702
+      },
+      "guards": {
+        "instruction_like_text": 0,
+        "exfil_or_impact": 0
+      },
+      "incidents": 303,
+      "high_priority_incidents": 128,
+      "analyst_items": 3238,
+      "analyst_items_per_day": 216.0
+    },
+    "steps": [
+      {
+        "scenario": "shaw",
+        "chain": "exfiltration",
+        "step": "service_stop",
+        "alerts": 2,
+        "caught_alerts": 2,
+        "routes": {
+          "analyst": 2
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "shaw",
+        "chain": "intrusion",
+        "step": "cracking",
+        "alerts": 4,
+        "caught_alerts": 4,
+        "routes": {
+          "analyst": 4
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "shaw",
+        "chain": "intrusion",
+        "step": "dirb",
+        "alerts": 4522,
+        "caught_alerts": 4522,
+        "routes": {
+          "analyst": 4522
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "shaw",
+        "chain": "intrusion",
+        "step": "network_scans",
+        "alerts": 9,
+        "caught_alerts": 9,
+        "routes": {
+          "analyst": 9
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "shaw",
+        "chain": "intrusion",
+        "step": "privilege_escalation",
+        "alerts": 45,
+        "caught_alerts": 45,
+        "routes": {
+          "analyst": 45
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "shaw",
+        "chain": "intrusion",
+        "step": "webshell",
+        "alerts": 1,
+        "caught_alerts": 1,
+        "routes": {
+          "analyst": 1
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "shaw",
+        "chain": "intrusion",
+        "step": "wpscan",
+        "alerts": 1478,
+        "caught_alerts": 1478,
+        "routes": {
+          "analyst": 1478
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "exfiltration",
+        "step": "dnsteal",
+        "alerts": 6,
+        "caught_alerts": 6,
+        "routes": {
+          "analyst": 6
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "exfiltration",
+        "step": "service_stop",
+        "alerts": 2,
+        "caught_alerts": 2,
+        "routes": {
+          "analyst": 2
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "intrusion",
+        "step": "cracking",
+        "alerts": 3,
+        "caught_alerts": 3,
+        "routes": {
+          "analyst": 3
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "intrusion",
+        "step": "dirb",
+        "alerts": 428239,
+        "caught_alerts": 428239,
+        "routes": {
+          "analyst": 428239
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "intrusion",
+        "step": "privilege_escalation",
+        "alerts": 19,
+        "caught_alerts": 19,
+        "routes": {
+          "analyst": 19
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "intrusion",
+        "step": "service_scans",
+        "alerts": 50,
+        "caught_alerts": 50,
+        "routes": {
+          "analyst": 50
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "intrusion",
+        "step": "webshell",
+        "alerts": 1,
+        "caught_alerts": 1,
+        "routes": {
+          "analyst": 1
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      },
+      {
+        "scenario": "wilson",
+        "chain": "intrusion",
+        "step": "wpscan",
+        "alerts": 6401,
+        "caught_alerts": 6401,
+        "routes": {
+          "analyst": 6392,
+          "auto_close": 9
+        },
+        "incident": true,
+        "caught": true,
+        "caught_by": "analyst"
+      }
+    ],
+    "misses": [],
+    "cost": {
+      "wall_seconds_per_1k_alerts": 1.43,
+      "jev_seconds_per_1k_alerts": 1.11,
+      "llm_seconds_per_1k_alerts": 0.291,
+      "jev_calls": 41562,
+      "jev_failures": 0,
+      "llm_calls": 577,
+      "llm_errors": 0,
+      "usd_per_1k_alerts": "n/a (set prices)"
+    }
+  },
+  "leakage": {
+    "payloads_scanned": 41816,
+    "matches": 63,
+    "examples": [
+      {
+        "payload": 7,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 50,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 60,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 66,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 71,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 97,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 118,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 503,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 2161,
+        "kind": "host",
+        "value": "monitoring"
+      },
+      {
+        "payload": 3637,
+        "kind": "host",
+        "value": "monitoring"
+      }
+    ]
+  },
+  "reflex_no_risk_store": {
+    "metrics": {
+      "alerts": 705028,
+      "groups": 41816,
+      "grouping_reduction": 0.9407,
+      "attack_alerts": 440782,
+      "benign_alerts": 264246,
+      "benign_auto_resolve_jev": 0.6159,
+      "benign_closed_total": 0.6159,
+      "per_step_recall": 1.0,
+      "per_alert_recall": 1.0,
+      "per_chain_recall": 1.0,
+      "attack_steps": 15,
+      "attack_chains": 4,
+      "route_share": {
+        "auto_close": 0.9298,
+        "sent_to_llm": 0.0138,
+        "llm_benign": 0.0,
+        "analyst": 0.0702
+      },
+      "guards": {
+        "instruction_like_text": 0,
+        "exfil_or_impact": 0
+      },
+      "incidents": 0,
+      "high_priority_incidents": 0,
+      "analyst_items": 2935,
+      "analyst_items_per_day": 195.8
+    },
+    "cost": {
+      "wall_seconds_per_1k_alerts": 0.307,
+      "jev_seconds_per_1k_alerts": 0.001,
+      "llm_seconds_per_1k_alerts": 0.284,
+      "jev_calls": 0,
+      "jev_failures": 0,
+      "llm_calls": 577,
+      "llm_errors": 0,
+      "usd_per_1k_alerts": "n/a (set prices)"
+    }
+  },
+  "lr_baseline": {
+    "metrics": {
+      "alerts": 705028,
+      "groups": 41816,
+      "grouping_reduction": 0.9407,
+      "attack_alerts": 440782,
+      "benign_alerts": 264246,
+      "benign_auto_resolve_jev": 0.7966,
+      "benign_closed_total": 0.7966,
+      "per_step_recall": 1.0,
+      "per_alert_recall": 1.0,
+      "per_chain_recall": 1.0,
+      "attack_steps": 15,
+      "attack_chains": 4,
+      "route_share": {
+        "auto_close": 0.9762,
+        "sent_to_llm": 0.0,
+        "llm_benign": 0.0,
+        "analyst": 0.0238
+      },
+      "guards": {
+        "instruction_like_text": 0,
+        "exfil_or_impact": 0
+      },
+      "incidents": 0,
+      "high_priority_incidents": 0,
+      "analyst_items": 997,
+      "analyst_items_per_day": 66.5
+    },
+    "threshold": 0.9249999999999999,
+    "cost": {
+      "wall_seconds_per_1k_alerts": 0.037,
+      "usd_per_1k_alerts": 0.0
+    }
+  },
+  "cloud_llm_estimate": {
+    "groups": 41816,
+    "est_input_tokens_per_group": 365,
+    "usd_per_1k_alerts": "n/a (set prices)"
+  },
+  "llm_only": {
+    "metrics": {
+      "alerts": 705028,
+      "groups": 41816,
+      "grouping_reduction": 0.9407,
+      "attack_alerts": 440782,
+      "benign_alerts": 264246,
+      "benign_auto_resolve_jev": 0.0,
+      "benign_closed_total": 0.0001,
+      "per_step_recall": 1.0,
+      "per_alert_recall": 1.0,
+      "per_chain_recall": 1.0,
+      "attack_steps": 15,
+      "attack_chains": 4,
+      "route_share": {
+        "auto_close": 0.0,
+        "sent_to_llm": 1.0,
+        "llm_benign": 0.0007,
+        "analyst": 0.9993
+      },
+      "guards": {
+        "instruction_like_text": 0,
+        "exfil_or_impact": 0
+      },
+      "incidents": 297,
+      "high_priority_incidents": 158,
+      "analyst_items": 42082,
+      "analyst_items_per_day": 2807.2
+    },
+    "cost": {
+      "wall_seconds_per_1k_alerts": 20.802,
+      "jev_seconds_per_1k_alerts": 0.0,
+      "llm_seconds_per_1k_alerts": 20.438,
+      "jev_calls": 0,
+      "jev_failures": 41816,
+      "llm_calls": 41816,
+      "llm_errors": 0,
+      "usd_per_1k_alerts": "n/a (set prices)"
+    }
+  }
+}

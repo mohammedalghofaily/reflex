@@ -1,0 +1,240 @@
+{
+  "threshold": 0.9249999999999999,
+  "train_groups": 82975,
+  "metrics": {
+    "alerts": 705028,
+    "groups": 41816,
+    "grouping_reduction": 0.9407,
+    "attack_alerts": 440782,
+    "benign_alerts": 264246,
+    "benign_auto_resolve_jev": 0.7966,
+    "benign_closed_total": 0.7966,
+    "per_step_recall": 1.0,
+    "per_alert_recall": 1.0,
+    "per_chain_recall": 1.0,
+    "attack_steps": 15,
+    "attack_chains": 4,
+    "route_share": {
+      "auto_close": 0.9761,
+      "sent_to_llm": 0.0,
+      "llm_benign": 0.0,
+      "analyst": 0.0239
+    },
+    "guards": {
+      "instruction_like_text": 0,
+      "exfil_or_impact": 0
+    },
+    "incidents": 0,
+    "high_priority_incidents": 0,
+    "analyst_items": 998,
+    "analyst_items_per_day": 66.6
+  },
+  "steps": [
+    {
+      "scenario": "shaw",
+      "chain": "exfiltration",
+      "step": "service_stop",
+      "alerts": 2,
+      "caught_alerts": 2,
+      "routes": {
+        "analyst": 2
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "shaw",
+      "chain": "intrusion",
+      "step": "cracking",
+      "alerts": 4,
+      "caught_alerts": 2,
+      "routes": {
+        "analyst": 2,
+        "auto_close": 2
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "shaw",
+      "chain": "intrusion",
+      "step": "dirb",
+      "alerts": 4522,
+      "caught_alerts": 4522,
+      "routes": {
+        "analyst": 4522
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "shaw",
+      "chain": "intrusion",
+      "step": "network_scans",
+      "alerts": 9,
+      "caught_alerts": 9,
+      "routes": {
+        "analyst": 9
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "shaw",
+      "chain": "intrusion",
+      "step": "privilege_escalation",
+      "alerts": 45,
+      "caught_alerts": 42,
+      "routes": {
+        "analyst": 42,
+        "auto_close": 3
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "shaw",
+      "chain": "intrusion",
+      "step": "webshell",
+      "alerts": 1,
+      "caught_alerts": 1,
+      "routes": {
+        "analyst": 1
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "shaw",
+      "chain": "intrusion",
+      "step": "wpscan",
+      "alerts": 1478,
+      "caught_alerts": 1478,
+      "routes": {
+        "analyst": 1478
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "exfiltration",
+      "step": "dnsteal",
+      "alerts": 6,
+      "caught_alerts": 5,
+      "routes": {
+        "analyst": 5,
+        "auto_close": 1
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "exfiltration",
+      "step": "service_stop",
+      "alerts": 2,
+      "caught_alerts": 2,
+      "routes": {
+        "analyst": 2
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "intrusion",
+      "step": "cracking",
+      "alerts": 3,
+      "caught_alerts": 2,
+      "routes": {
+        "analyst": 2,
+        "auto_close": 1
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "intrusion",
+      "step": "dirb",
+      "alerts": 428239,
+      "caught_alerts": 428239,
+      "routes": {
+        "analyst": 428239
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "intrusion",
+      "step": "privilege_escalation",
+      "alerts": 19,
+      "caught_alerts": 17,
+      "routes": {
+        "analyst": 17,
+        "auto_close": 2
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "intrusion",
+      "step": "service_scans",
+      "alerts": 50,
+      "caught_alerts": 50,
+      "routes": {
+        "analyst": 50
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "intrusion",
+      "step": "webshell",
+      "alerts": 1,
+      "caught_alerts": 1,
+      "routes": {
+        "analyst": 1
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    },
+    {
+      "scenario": "wilson",
+      "chain": "intrusion",
+      "step": "wpscan",
+      "alerts": 6401,
+      "caught_alerts": 6392,
+      "routes": {
+        "analyst": 6392,
+        "auto_close": 9
+      },
+      "incident": false,
+      "caught": true,
+      "caught_by": "analyst"
+    }
+  ],
+  "misses": [],
+  "cost": {
+    "wall_seconds_per_1k_alerts": 0.032,
+    "usd_per_1k_alerts": 0.0
+  }
+}

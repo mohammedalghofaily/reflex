@@ -1,0 +1,36 @@
+[
+ {
+  "suspicion_floor": [
+   0.1,
+   0.3,
+   0.5,
+   0.7
+  ],
+  "risk_threshold": [
+   1.0,
+   2.0
+  ],
+  "window_hours": [
+   48.0,
+   72.0
+  ]
+ },
+ {
+  "auto_close_max": [
+   0.9,
+   0.95,
+   0.97,
+   0.99
+  ],
+  "analyst_min": [
+   0.999
+  ]
+ },
+ {
+  "half_life_hours": [
+   12.0,
+   24.0,
+   48.0
+  ]
+ }
+]

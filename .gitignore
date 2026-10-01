@@ -1,0 +1,20 @@
+# secrets
+.env
+
+# environment
+.venv/
+*.egg-info/
+__pycache__/
+
+# dataset (download it, see README)
+data/
+
+# API answer caches and run logs
+*_cache.jsonl
+*.log
+
+# working copies; final results live in results_v1/ and results_v2/
+results/
+artifacts/*
+!artifacts/v1/
+artifacts/candidates/

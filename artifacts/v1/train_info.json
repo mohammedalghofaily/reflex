@@ -1,0 +1,27 @@
+{
+  "train_groups": 20000,
+  "jev_failures": 0,
+  "aggregator_weights": {
+    "off_hours": 0.09,
+    "unusual_activity": 13.759,
+    "account_mismatch": 2.828,
+    "malicious_automation": 1.42,
+    "severity": 15.46,
+    "severity_missing": 2.471,
+    "n_tactics": 1.344,
+    "tactic:reconnaissance": -0.587,
+    "tactic:resource_development": 0.0,
+    "tactic:initial_access": -4.561,
+    "tactic:execution": 0.0,
+    "tactic:persistence": -1.625,
+    "tactic:privilege_escalation": 3.302,
+    "tactic:defense_evasion": 3.336,
+    "tactic:credential_access": 3.371,
+    "tactic:discovery": -0.015,
+    "tactic:lateral_movement": -1.877,
+    "tactic:collection": 0.0,
+    "tactic:command_and_control": 0.0,
+    "tactic:exfiltration": 0.0,
+    "tactic:impact": 0.0
+  }
+}

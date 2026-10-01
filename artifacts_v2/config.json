@@ -1,0 +1,38 @@
+{
+  "routing": {
+    "auto_close_max": 0.99,
+    "analyst_min": 0.999,
+    "fallback_suspicion": 0.5
+  },
+  "risk": {
+    "half_life_hours": 12.0,
+    "window_hours": 48.0,
+    "cooldown_hours": 6.0,
+    "risk_threshold": 2.0,
+    "suspicion_floor": 0.3,
+    "min_tactics_for_incident": 2,
+    "high_priority_tactics": 3,
+    "high_priority_tactic_names": [
+      "exfiltration",
+      "impact"
+    ]
+  },
+  "grouping": {
+    "window_seconds": 3600.0
+  },
+  "llm": {
+    "base_url": "http://localhost:11434",
+    "model": "qwen3:8b",
+    "timeout_seconds": 30.0,
+    "temperature": 0.0,
+    "max_history_alerts": 10,
+    "prompt": "v1",
+    "examples_path": null
+  },
+  "jev": {
+    "model": "jev-latest",
+    "timeout_seconds": 5.0,
+    "max_retries": 1,
+    "concurrency": 16
+  }
+}
